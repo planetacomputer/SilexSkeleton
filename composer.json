@@ -1,0 +1,14 @@
+{
+    "require": {
+        "silex/silex": "^2.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Hello\\Provider\\": "src",
+            "Database\\Provider\\": "src"
+        },
+        "psr-4" : {
+			"MyApp\\" : "src/MyApp"
+		}
+    }
+}
