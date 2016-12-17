@@ -10,9 +10,22 @@ Tag 1.0
 -------------
 Bare Silex composer.json but including some capabilities as:
 
-> **Note:**
+> **New:**
 
 > - Creation of a dummy new HelloServiceProvider extending from ServiceProviderInterface.
 > - SQLite Database connection as a service, but with no provider
 > - An exemple of basic Controllers (BarController.php and FooController.php) without no user of providers
 > - Use of the ControllerProviderInterface to mounts several groups of routes
+
+Branch 2
+-------------
+Doctrine2 is a ORM and it uses its own database abstraction layer called DBAL. In fact DBAL isn’t a pure database abstraction layer. It’s built over PDO. It’s a set of PHP classes we can use that gives us features not available with ‘pure’ PDO. If we use Doctrine2 we’re using DBAL behind the scene, but we don’t need to use Doctrine2 to use DBAL. We can use DBAL as a database abstraction layer without any ORM. Obiously this extra PHP layer over our PDO extension needs to pay a fee.
+
+> **New:**
+
+> - DoctrineServiceProvider for DBAL (not Doctrine, because Doctrine ORM integration is not supplied in Silex) used in HelloControllerProvider.
+
+Branch 3
+-------------
+The MonologServiceProvider provides a default logging mechanism through Jordi Boggiano's Monolog library. It will log requests and errors and allow you to add logging to your application. This allows you to debug and monitor the behaviour, even in production.
+Extension for custom lineformatting as you can configure Monolog (like adding or changing the handlers) before using it by extending the monolog service.

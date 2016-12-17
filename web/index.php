@@ -30,6 +30,7 @@ $app->get('/blog', function () use ($blogPosts) {
 //Anonymous controller
 $app->get('/hello', function (Request $request) use ($app) {
     $name = $request->get('name');
+    $app['monolog']->addInfo(sprintf("User '%s' registered.", $name));
     return $app['hello']($name);
 });
 

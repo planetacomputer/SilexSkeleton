@@ -1,5 +1,5 @@
 <?php
-
+//No se ejecuta desde web, sirve para preparar la base de datos
 try {
     $dbPath = __DIR__.'/database.sqlite';
     $dbh = new PDO('sqlite:'.$dbPath);
