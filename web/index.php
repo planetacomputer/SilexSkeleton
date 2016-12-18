@@ -8,6 +8,14 @@ $app = new Silex\Application();
 $app['debug'] = true;
 require __DIR__.'/../app/services.php';
 
+//Recuperamos el package inyectado en services
+echo $app['assetStaticPackage']->getUrl('/animacion.gif');
+
+//Servicio registrado por AssetServiceProvider
+echo ('<link rel="stylesheet" href="'.$app['assets.packages']->getUrl('w3.css', 'css').'">');
+echo ('<img src="'.$app['assets.packages']->getUrl('image.png', 'images').'">');
+
+
 //To controllers with no $app available
 $app->get("/bar", "MyApp\\Controller\\BarController::indexAction");
 $app->get("/bar/show/{id}", "MyApp\\Controller\\BarController::showAction");

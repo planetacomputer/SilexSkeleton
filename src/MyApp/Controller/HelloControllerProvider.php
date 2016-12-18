@@ -17,7 +17,7 @@ class HelloControllerProvider implements ControllerProviderInterface
             $sql = 'SELECT * FROM people_to_spam';
 		    $texto = '<br>';
 		    foreach ($app['pdo']->query($sql) as $row) {
-		    	$texto .= '-'.$row['email'].'<br>';
+		    	$texto .= '-'.$row['email'].'<img src="'.$app['assets.packages']->getUrl(explode("@", $row['email'])[0], 'images').'.png">'.'<br>';
 		    }
             return new Response($texto, 201);
         });
