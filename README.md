@@ -8,7 +8,7 @@ Created as bare Silex 2.0 project, it will grow including new functionalities, m
 
 Tag 1.0
 -------------
-Bare Silex composer.json but including some capabilities as:
+Bare **Silex** composer.json but including some capabilities as:
 
 > **New:**
 
@@ -23,16 +23,24 @@ Doctrine2 is a ORM and it uses its own database abstraction layer called DBAL. I
 
 > **New:**
 
-> - DoctrineServiceProvider for DBAL (not Doctrine, because Doctrine ORM integration is not supplied in Silex) used in HelloControllerProvider.
+> - **DoctrineServiceProvider for DBAL** (not Doctrine, because Doctrine ORM integration is not supplied in Silex) used in HelloControllerProvider.
 
 Branch 3
 -------------
-The MonologServiceProvider provides a default logging mechanism through Jordi Boggiano's Monolog library. It will log requests and errors and allow you to add logging to your application. This allows you to debug and monitor the behaviour, even in production.
+The **MonologServiceProvider** provides a default logging mechanism through Jordi Boggiano's Monolog library. It will log requests and errors and allow you to add logging to your application. This allows you to debug and monitor the behaviour, even in production.
 Extension for custom lineformatting as you can configure Monolog (like adding or changing the handlers) before using it by extending the monolog service.
 
 Branch 4
 -------------
-The Asset component manages URL generation and versioning of web assets such as CSS stylesheets, JavaScript files and image files. The AssetServiceProvider provides a way to manage URL generation and versioning of web assets such as CSS stylesheets, JavaScript files and image files. Named packages are registered in container and also a EmptyVersionStrategy Package as exemple of injection without need of provider. These objects can be called from anywhere where container $app is available. With Symfony Twig Bridge also available in Twig templates.
+The **Asset component** manages URL generation and versioning of web assets such as CSS stylesheets, JavaScript files and image files. The AssetServiceProvider provides a way to manage URL generation and versioning of web assets such as CSS stylesheets, JavaScript files and image files. Named packages are registered in container and also a EmptyVersionStrategy Package as exemple of injection without need of provider. These objects can be called from anywhere where container $app is available. With Symfony Twig Bridge also available in Twig templates.
+
+Branch 5
+-------------
+The **TranslationServiceProvider** provides a service for translating your application into different languages.
+Having your translations in PHP files can be inconvenient. This recipe will show you how to load translations from external YAML files.
+
+composer require symfony/translation
+composer require symfony/config symfony/yaml
 
 Most used commands
 -------------

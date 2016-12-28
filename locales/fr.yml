@@ -1,0 +1,3 @@
+hello: Boonjour %name%
+goodbye: Au revoir %name%
+about: Sur

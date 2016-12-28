@@ -1,6 +1,9 @@
 {
     "require": {
-        "silex/silex": "^2.0"
+        "silex/silex": "^2.0",
+        "symfony/translation": "^3.2",
+        "symfony/config": "^3.2",
+        "symfony/yaml": "^3.2"
     },
     "autoload": {
         "psr-0": {

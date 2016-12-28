@@ -1,0 +1,3 @@
+hello: Heello %name%
+goodbye: Goodbye %name%
+about: About

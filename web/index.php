@@ -8,6 +8,44 @@ $app = new Silex\Application();
 $app['debug'] = true;
 require __DIR__.'/../app/services.php';
 
+
+//Traducciones y rutas
+/*$app['translator.domains'] = array(
+    'messages' => array(
+        'en' => array(
+            'hello'     => 'Hello %name%',
+            'goodbye'   => 'Goodbye %name%',
+            'about'     => 'About',
+        ),
+        'de' => array(
+            'hello'     => 'Hallo %name%',
+            'goodbye'   => 'Tschüss %name%',
+            'about'     => 'Uber',
+        ),
+        'fr' => array(
+            'hello'     => 'Bonjour %name%',
+            'goodbye'   => 'Au revoir %name%',
+            'about'     => 'Sur',
+        ),
+    ),
+    'validators' => array(
+        'fr' => array(
+            'This value should be a valid number.' => 'Cette valeur doit être un nombre.',
+        ),
+    ),
+);
+*/
+/*$app->get('/{_locale}/{message}/{name}', function ($message, $name) use ($app) {
+    return ($app['translator']->trans($message, array('%name%' => $name)) 
+    	. $app['translator']->trans('about') );
+});*/
+
+$app->get('/{_locale}/{message}/{name}', function ($message, $name) use ($app) {
+    return ($app['translator']->trans($message, array('%name%' => $name))
+    	//ejemplo de traduccion con trans
+    	. '-'. $app['translator']->trans('about', array(), null , 'de'));
+});
+
 //To controllers with no $app available
 $app->get("/bar", "MyApp\\Controller\\BarController::indexAction");
 $app->get("/bar/show/{id}", "MyApp\\Controller\\BarController::showAction");
