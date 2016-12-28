@@ -22,6 +22,20 @@ $blogPosts = array(
     ),
 );
 
+$app->get('/mail', function (Request $request) use ($app) {
+    $message = \Swift_Message::newInstance()
+        ->setSubject('[YourSite] Feedback')
+        ->setFrom(array('*******'))
+        ->setTo(array('*******'))
+        ->setBody($request->get('message'));
+    //if you send emails using a command console, 
+    //it is recommended that you disable the use of the memory spool
+    //$app['swiftmailer.use_spool'] = false;
+    $app['mailer']->send($message);
+
+    return new Response('Thank you for your feedback!', 201);
+});
+
 //Anonymous controller
 $app->get('/blog', function () use ($blogPosts) {
 	return new Response('Gracias por tus comentarios', 201);
@@ -41,4 +55,3 @@ $app->mount('/', new MyApp\Controller\HelloControllerProvider());
 
 
 $app->run();
-

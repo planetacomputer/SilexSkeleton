@@ -1,6 +1,7 @@
 {
     "require": {
-        "silex/silex": "^2.0"
+        "silex/silex": "^2.0",
+        "swiftmailer/swiftmailer": "^5.4"
     },
     "autoload": {
         "psr-0": {
