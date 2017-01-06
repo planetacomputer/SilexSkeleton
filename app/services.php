@@ -10,3 +10,5 @@ $app['database.dsn'] = 'sqlite:'.__DIR__.'/../data/database.sqlite';
 $app['pdo'] = function($app) {
     return new PDO($app['database.dsn']);
 };
+//Registering Validator service
+$app->register(new Silex\Provider\ValidatorServiceProvider());

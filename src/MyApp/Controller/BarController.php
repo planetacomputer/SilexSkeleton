@@ -12,7 +12,7 @@ class BarController{
 	    	$texto .= '-'.$row['email'].'<br>';
 	    }
         */
-$app = new Silex\Application();
+        $app = new Silex\Application();
         return "Bar indexAction!".$texto;
     }
 
